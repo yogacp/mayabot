@@ -16,6 +16,8 @@ import com.tunaiku.chatbot.vo.ChatMessage
  */
 class ChatAdapter(query: Query) : FirebaseRecyclerAdapter<ChatMessage, ChatVH>(ChatMessage::class.java, R.layout.item_chat, ChatVH::class.java,query){
     override fun populateViewHolder(viewHolder: ChatVH?, model: ChatMessage?, position: Int) {
+        var isShown: Boolean = false;
+
         if (model!!.msgUser.equals("user")) {
             viewHolder!!.rightText.setText(model.msgText)
             viewHolder!!.layoutRight.visibility = View.VISIBLE
@@ -30,7 +32,7 @@ class ChatAdapter(query: Query) : FirebaseRecyclerAdapter<ChatMessage, ChatVH>(C
             viewHolder!!.mayaTyping.visibility = View.VISIBLE
 
             // Make maya is typing for 1.5 seconds
-            if(position == itemCount - 1) {
+            if(position == itemCount - 1 && !isShown) {
                 object : CountDownTimer(1500, 1500) {
 
                     override fun onTick(millisUntilFinished: Long) {}
@@ -40,6 +42,7 @@ class ChatAdapter(query: Query) : FirebaseRecyclerAdapter<ChatMessage, ChatVH>(C
                         viewHolder!!.layoutLeft.visibility = View.VISIBLE
                         viewHolder!!.csImage.visibility = View.VISIBLE
                         viewHolder!!.mayaTyping.visibility = View.GONE
+                        isShown = true
                     }
 
                 }.start()
@@ -48,6 +51,7 @@ class ChatAdapter(query: Query) : FirebaseRecyclerAdapter<ChatMessage, ChatVH>(C
                 viewHolder!!.layoutLeft.visibility = View.VISIBLE
                 viewHolder!!.csImage.visibility = View.VISIBLE
                 viewHolder!!.mayaTyping.visibility = View.GONE
+                isShown = false
             }
         }
     }
