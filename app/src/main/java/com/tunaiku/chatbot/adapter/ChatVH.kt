@@ -17,6 +17,7 @@ class ChatVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var rightText: TextView
     var layoutLeft: LinearLayout
     var layoutRight: LinearLayout
+    var mayaTyping: LinearLayout
     var csImage: ImageView
 
     init {
@@ -24,6 +25,7 @@ class ChatVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         rightText = itemView.findViewById<TextView>(R.id.rightText) as TextView
         layoutLeft = itemView.findViewById<LinearLayout>(R.id.layoutLeft) as LinearLayout
         layoutRight = itemView.findViewById<LinearLayout>(R.id.layoutRight) as LinearLayout
+        mayaTyping = itemView.findViewById<LinearLayout>(R.id.maya_typing) as LinearLayout
         csImage = itemView.findViewById<ImageView>(R.id.imageView3) as ImageView
     }
 }
