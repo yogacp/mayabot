@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.tunaiku.chatbot"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation ('com.android.support.test.espresso:espresso-core:3.0.1', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    //multidex
+    implementation 'com.android.support:multidex:1.0.1'
+
+    //Android Support Lib
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+    //RXJava
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.1.0'
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:11.4.2'
+    implementation 'com.google.firebase:firebase-database:11.4.2'
+    implementation 'com.google.firebase:firebase-messaging:11.4.2'
+
+    implementation 'com.firebaseui:firebase-ui-database:2.3.0'
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+    //Dialog Flow
+    implementation('ai.api:libai:1.4.8'){
+        exclude module: 'log4j-core'
+    }
+    annotationProcessor 'ai.api:libai:1.4.8'
+    implementation 'ai.api:sdk:2.0.7@aar'
+
+    //Dagger
+    compile ("com.google.dagger:dagger:2.5"){
+        exclude (group:'javax.annotation', module:'javax.annotation')
+    }
+    kapt "com.google.dagger:dagger-compiler:2.5"
+    compile 'javax.annotation:jsr250-api:1.0'
+}
+
+apply plugin: 'com.google.gms.google-services'

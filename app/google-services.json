@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "155242342041",
+    "firebase_url": "https://tunaiku-chatbo.firebaseio.com",
+    "project_id": "tunaiku-chatbo",
+    "storage_bucket": "tunaiku-chatbo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155242342041:android:69824ee5f1e1f898",
+        "android_client_info": {
+          "package_name": "com.tunaiku.chatbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155242342041-o70rn7l3ffn30mqf997nib161584j6lh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tunaiku.chatbot",
+            "certificate_hash": "2be3636ae7947f4e013367b0ca0551012e84c30b"
+          }
+        },
+        {
+          "client_id": "155242342041-4gvgqbht2ci8slq0ftlhse3502j3p3ia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh_FsVn31G7oJ1eItkXmXtn-jIMY246wY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155242342041-4gvgqbht2ci8slq0ftlhse3502j3p3ia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
